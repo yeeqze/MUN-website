@@ -1,103 +1,117 @@
-# Meuz'MUN - Guide de personnalisation
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=220&section=header&text=Meuz'MUN%202026&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Model%20United%20Nations%20-%20Meuse&descAlignY=58&descSize=20" />
+</p>
 
-## 🎨 Design modernisé !
+<p align="center">
+  🌍 Diplomacy • Debate • Leadership  
+</p>
 
-Votre site a été entièrement redesigné avec :
-- ✅ Zéro émojis → Icônes SVG modernes
-- ✅ Nouvelles polices (Montserrat + Inter)
-- ✅ Couleurs vibrantes (bleus électriques + or)
-- ✅ Animations 3D sur les cartes
-- ✅ Effets au hover interactifs
-- ✅ Hero avec grille animée
+<p align="center">
+  <strong>Developed by yeeqze</strong><br>
+  © 2026 All Rights Reserved
+</p>
 
-## 📸 Ajouter votre logo
 
-1. Mettez votre fichier logo dans le dossier (ex: `logo.png`)
-2. Ouvrez chaque fichier HTML
-3. Trouvez cette ligne dans la navigation :
-   ```html
-   <a href="index.html" class="logo">Meuz'<span>MUN</span></a>
-   ```
-4. Remplacez par :
-   ```html
-   <a href="index.html" class="logo">
-       <img src="logo.png" alt="Meuz'MUN" style="height: 40px;">
-   </a>
-   ```
+#  Meuz'MUN — Site officiel du projet MUN
 
-## 🖼️ Ajouter des photos
+![GitHub repo size](https://img.shields.io/github/repo-size/yeeqze/index.html)
+![GitHub last commit](https://img.shields.io/github/last-commit/yeeqze/index.html)
+![GitHub pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-### Dans le hero de l'accueil
-Remplacez l'icône globe par une vraie image :
-```html
-<!-- Ancienne version -->
-<div class="content-image">
-    <span style="position: relative; z-index: 1;">🌐</span>
-</div>
+> Site web officiel du projet **Meuz'MUN**, Modèle des Nations Unies organisé dans le département de la Meuse.
 
-<!-- Nouvelle version -->
-<div class="content-image" style="background-image: url('photo-mun.jpg'); background-size: cover;">
-</div>
+ **Site en ligne** :
+-> [https://yeeqze.github.io/index.html/index.html](https://yeeqze.github.io/index.html/index.html)
+
+ **Repository GitHub** :
+-> [https://github.com/yeeqze/index.html](https://github.com/yeeqze/index.html)
+
+---
+
+##  À propos du projet
+
+**Meuz’MUN** est un projet éducatif basé sur le concept du **Model United Nations (MUN)**, une simulation des Nations Unies où les participants incarnent des diplomates et débattent de problématiques internationales.
+
+ **Dates de l’événement : 1er & 2 avril 2026**
+
+Le site a pour objectif de :
+
+* Présenter l’événement
+* Informer les participants
+* Détailler les comités
+* Présenter l’équipe organisatrice
+* Répondre aux questions fréquentes
+* Centraliser les informations pratiques
+
+---
+
+##  Technologies utilisées
+
+Le site est une application web statique développée avec :
+
+*  **HTML5** — Structure du site
+*  **CSS3** — Design et mise en page
+*  **JavaScript** — Interactions dynamiques
+*  **GitHub Pages** — Hébergement
+
+Aucun framework externe n’a été utilisé.
+
+---
+
+##  Structure du projet
+
+```
+ index.html/
+ ├── index.html        # Page principale
+ ├── about.html        # À propos
+ ├── comites.html      # Présentation des comités
+ ├── lycees.html       # Lycées participants
+ ├── equipe.html       # Équipe organisatrice
+ ├── faq.html          # Foire aux questions
+ ├── contact.html      # Contact
+ ├── style.css         # Feuille de style
+ └── script.js         # Scripts JavaScript
 ```
 
-### Dans les cartes d'événement
-Ajoutez un fond d'image :
-```css
-.event-card {
-    background-image: url('votre-photo.jpg');
-    background-size: cover;
-    background-position: center;
-}
+---
+
+##  Fonctionnalités
+
+ Design moderne et clair
+ Navigation multi-pages
+ Sections informatives détaillées
+ Hébergement gratuit via GitHub Pages
+ Structure simple et maintenable
+
+---
+
+##  Améliorations futures
+
+ Nom de domaine personnalisé
+ Optimisation mobile avancée
+ Formulaire de contact fonctionnel
+ Ajout de contenu multimédia
+ Animations et interactions plus avancées
+
+---
+
+##  Installation locale
+
+Si tu veux modifier le projet :
+
+```bash
+git clone https://github.com/yeeqze/index.html.git
+cd index.html
 ```
 
-## 🎨 Personnaliser les couleurs
+Puis ouvre simplement `index.html` dans ton navigateur.
 
-Ouvrez `style.css` et modifiez les variables en haut du fichier :
-```css
-:root {
-    --primary-blue: #0066cc;  /* Bleu principal */
-    --secondary-blue: #00a8ff; /* Bleu secondaire */
-    --accent-gold: #ffa500;    /* Or/Orange */
-    --dark: #0a1628;          /* Fond sombre */
-}
-```
+---
 
-## ✏️ Modifier le contenu
+##  Auteur
 
-### Page Équipe
-Dans `equipe.html`, remplacez "Nom Prénom" par les vrais noms :
-```html
-<h3>Jean Dupont</h3>
-<p>Secrétaire Général</p>
-```
+Développé par **yeeqze**
+© 2026 yeeqze — All Rights Reserved
 
-### Page Contact
-Dans `contact.html`, mettez vos vraies coordonnées :
-```html
-<a href="mailto:votre.email@lycee.fr">votre.email@lycee.fr</a>
-<p>@VotreCompteInstagram sur Instagram</p>
-```
-
-## 🚀 Mettre en ligne
-
-1. Téléchargez tous les fichiers modifiés
-2. Mettez-les dans votre dossier de projet
-3. GitHub Desktop → Commit → Push
-4. Attendez 1-2 minutes
-5. Votre site est à jour sur `https://444-v.github.io/meuzmun/`
-
-## 💡 Astuces
-
-- Les icônes SVG peuvent être changées sur https://feathericons.com/
-- Pour des photos gratuites : https://unsplash.com/
-- Les animations se déclenchent au hover (survol)
-
-## 🎯 Prochaines étapes suggérées
-
-1. Ajoutez votre logo
-2. Remplacez les photos placeholder
-3. Mettez les vrais noms de l'équipe
-4. Ajoutez vos contacts réels
-5. Testez sur mobile !
-
-Besoin d'aide ? Revenez vers moi ! 😊
+---
