@@ -43,3 +43,49 @@ function toggleFAQ(element) {
     element.classList.toggle('active');
     answer.classList.toggle('active');
 }
+
+// Animated counters
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const start = 0;
+    const increment = target / (duration / 16); // 60 FPS
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Intersection Observer for counter animation
+const observerOptions = {
+    threshold: 0.5
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                if (counter.textContent === '0') {
+                    animateCounter(counter);
+                }
+            });
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe stats section when it exists
+document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.querySelector('.stat-item')?.parentElement?.parentElement;
+    if (statsSection) {
+        counterObserver.observe(statsSection);
+    }
+});
