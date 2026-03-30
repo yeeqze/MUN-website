@@ -182,6 +182,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Bind FAQ clicks in JS (works even if inline onclick is blocked)
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+            toggleFAQ(question);
+        });
+    });
 });
 
 // FAQ toggle
