@@ -1,6 +1,7 @@
 // Custom Cursor
 function initCursor() {
     if (window.innerWidth < 768) return; // Skip on mobile
+    if (document.querySelector('.cursor')) return;
     document.body.classList.add('custom-cursor');
     
     const cursor = document.createElement('div');
@@ -44,7 +45,7 @@ function initCursor() {
 
     animateCursor();
 
-    const interactiveElements = document.querySelectorAll('a, button, .cta-button, .nav-links a, .event-card');
+    const interactiveElements = document.querySelectorAll('a, button, .cta-button, .nav-links a');
     interactiveElements.forEach(function(el) {
         el.addEventListener('mouseenter', function() {
             cursor.classList.add('hover');
@@ -174,6 +175,9 @@ function toggleMenu() {
 
 // Close mobile menu on link click
 document.addEventListener('DOMContentLoaded', function() {
+    if (window.__meuzBindingsInitialized) return;
+    window.__meuzBindingsInitialized = true;
+
     document.querySelectorAll('.nav-links a').forEach(function(link) {
         link.addEventListener('click', function() {
             const navLinks = document.getElementById('navLinks');
@@ -191,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Enable tap interaction for flip cards on touch devices
-    if (window.matchMedia('(hover: none)').matches || window.innerWidth <= 768) {
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
         document.querySelectorAll('.event-card-front p').forEach(function(hint) {
             if (hint.textContent && hint.textContent.toLowerCase().includes('hover')) {
                 hint.textContent = 'Touchez pour details';
