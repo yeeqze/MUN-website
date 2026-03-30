@@ -189,6 +189,41 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleFAQ(question);
         });
     });
+
+    // Enable tap interaction for flip cards on touch devices
+    if (window.matchMedia('(hover: none)').matches || window.innerWidth <= 768) {
+        document.querySelectorAll('.event-card-front p').forEach(function(hint) {
+            if (hint.textContent && hint.textContent.toLowerCase().includes('hover')) {
+                hint.textContent = 'Touchez pour details';
+            }
+        });
+
+        document.querySelectorAll('.event-card').forEach(function(card) {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+
+            function toggleCard() {
+                const isOpen = card.classList.contains('is-flipped');
+                document.querySelectorAll('.event-card.is-flipped').forEach(function(openCard) {
+                    openCard.classList.remove('is-flipped');
+                });
+                if (!isOpen) {
+                    card.classList.add('is-flipped');
+                }
+            }
+
+            card.addEventListener('click', function() {
+                toggleCard();
+            });
+
+            card.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleCard();
+                }
+            });
+        });
+    }
 });
 
 // FAQ toggle

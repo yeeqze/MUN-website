@@ -613,6 +613,10 @@ section {
     transform: rotateY(180deg);
 }
 
+.event-card.is-flipped {
+    transform: rotateY(180deg);
+}
+
 .event-card-front,
 .event-card-back {
     position: absolute;
@@ -921,5 +925,19 @@ section {
 
     .timeline-dot {
         left: 20px;
+    }
+}
+
+@media (hover: none) {
+    .event-card {
+        cursor: pointer;
+    }
+
+    .event-card:hover {
+        transform: none;
+    }
+
+    .event-card.is-flipped {
+        transform: rotateY(180deg);
     }
 }
