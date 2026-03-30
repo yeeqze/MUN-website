@@ -450,6 +450,75 @@ section {
     margin: 0 auto;
 }
 
+/* About Intro Highlight */
+.about-highlight {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(180px, 0.7fr);
+    gap: 2.25rem;
+    align-items: center;
+    padding: 2.2rem;
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(0, 168, 255, 0.15), transparent 45%),
+        rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.about-highlight__eyebrow {
+    display: inline-block;
+    margin: 0 0 0.9rem 0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    background: rgba(255, 165, 0, 0.12);
+    border: 1px solid rgba(255, 165, 0, 0.28);
+}
+
+.about-highlight__text h3 {
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.about-highlight__text p {
+    margin: 0 0 1rem 0;
+    color: rgba(255, 255, 255, 0.86);
+    line-height: 1.85;
+    font-size: 1.07rem;
+    max-width: 72ch;
+}
+
+.about-highlight__text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-highlight__icon {
+    width: min(220px, 100%);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    color: var(--accent-gold);
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.2), transparent 45%),
+        linear-gradient(135deg, rgba(255, 165, 0, 0.12), rgba(0, 102, 204, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.about-highlight__icon svg {
+    width: 62%;
+    height: 62%;
+    filter: drop-shadow(0 0 18px rgba(255, 165, 0, 0.45));
+}
+
 /* Skills Section */
 .skills-section {
     background: linear-gradient(180deg, #f5f7fa 0%, #e8eef6 100%);
@@ -808,6 +877,25 @@ section {
 
     .section-title {
         font-size: 2.5rem;
+    }
+
+    .about-highlight {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .about-highlight__text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-highlight__text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .about-highlight__icon {
+        width: 140px;
     }
 
     .skills-grid {
