@@ -1,6 +1,7 @@
 // Custom Cursor
 function initCursor() {
     if (window.innerWidth < 768) return; // Skip on mobile
+    document.body.classList.add('custom-cursor');
     
     const cursor = document.createElement('div');
     cursor.className = 'cursor';

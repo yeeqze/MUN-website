@@ -28,6 +28,10 @@ body {
     color: var(--text-dark);
     overflow-x: hidden;
     background: var(--dark);
+    cursor: auto;
+}
+
+body.custom-cursor {
     cursor: none;
 }
 
