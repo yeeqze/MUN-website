@@ -257,26 +257,26 @@ const revealObserver = new IntersectionObserver(function(entries) {
 const counterObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.stat-number');
-            counters.forEach(function(counter) {
-                if (counter.textContent === '0') {
-                    animateCounter(counter);
-                }
-            });
+            const counter = entry.target.querySelector('.stat-number');
+            if (counter && counter.textContent === '0') {
+                animateCounter(counter);
+            }
             counterObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -10% 0px'
+});
 
 // Initialize on load
 window.addEventListener('load', function() {
     initCursor();
     createParticles();
     
-    const statsSection = document.querySelector('.stat-item');
-    if (statsSection && statsSection.parentElement && statsSection.parentElement.parentElement) {
-        counterObserver.observe(statsSection.parentElement.parentElement);
-    }
+    document.querySelectorAll('.stat-item').forEach(function(item) {
+        counterObserver.observe(item);
+    });
     
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
         revealObserver.observe(el);
