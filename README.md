@@ -101,7 +101,7 @@ Aucun framework externe n’a été utilisé.
 Si tu veux modifier le projet :
 
 ```bash
-git clone https://github.com/yeeqze/index.html.git
+git clone https://github.com/yeeqze/Meuz-MUN.git
 cd index.html
 ```
 
